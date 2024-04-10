@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://0iwe1t5dk2s4"]
+
+[ext_resource type="Script" path="res://UIControls.cs" id="1_ouvot"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrdx3"]
+bg_color = Color(0, 0, 0, 0.501961)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[node name="UIControls" type="CanvasLayer"]
+script = ExtResource("1_ouvot")
+
+[node name="TouchControls" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_right = 0.059
+anchor_bottom = 0.033
+offset_right = 512.14
+offset_bottom = 928.32
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -508.0
+offset_bottom = -928.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrdx3")
+
+[connection signal="button_down" from="TouchControls" to="." method="_on_touch_controls_button_down"]
+[connection signal="button_up" from="TouchControls" to="." method="_on_touch_controls_button_up"]
