@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Diagnostics;
 
 public partial class UIControls : CanvasLayer
 {
@@ -13,8 +14,8 @@ public partial class UIControls : CanvasLayer
 	public override void _Ready()
 	{
 		base._Ready();
-		_horizontalDeathZone = (int)(GetViewport().GetVisibleRect().Size.X / 5);
-		_verticalDeathZone = (int)(GetViewport().GetVisibleRect().Size.Y / 5);
+		_horizontalDeathZone = (int)(GetViewport().GetVisibleRect().Size.X / 10 /2);
+		_verticalDeathZone = (int)(GetViewport().GetVisibleRect().Size.Y / 10 / 2);
 
 		_touchPos = GetNode<Label>("Label");
 		_touchPos.Visible = false;
@@ -57,16 +58,16 @@ public partial class UIControls : CanvasLayer
 		{
 			_isDragging = false;
 			_touchPos.Visible = false;
+			_resetInput();
 		}
 	}
 
-	private void _resetHorizontalInput()
+	private void _resetInputHorizontal()
 	{
 		Input.ActionRelease("ui_left");
 		Input.ActionRelease("ui_right");
 	}
-
-	private void _resetVerticalInput()
+	private void _resetInputVertical()
 	{
 		Input.ActionRelease("ui_down");
 		Input.ActionRelease("ui_up");
@@ -74,8 +75,8 @@ public partial class UIControls : CanvasLayer
 
 	private void _resetInput()
 	{
-		_resetHorizontalInput();
-		_resetVerticalInput();
+		_resetInputHorizontal();
+		_resetInputVertical();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -86,35 +87,39 @@ public partial class UIControls : CanvasLayer
 			Vector2 currentPosition = GetViewport().GetMousePosition();
 			Vector2 movement = currentPosition - _startingPoint;
 
-			if (movement.X > 10)
+			Debug.WriteLine($"SP {_startingPoint}");
+			Debug.WriteLine($"CP {currentPosition}");
+			Debug.WriteLine($"M {movement}");
+
+			if (movement.X > _horizontalDeathZone)
 			{
+				Input.ActionRelease("ui_left");
 				Input.ActionPress("ui_right", 1);
 			}
-			else if (movement.X < -10)
+			else if (movement.X < -_horizontalDeathZone)
 			{
+				Input.ActionRelease("ui_right");
 				Input.ActionPress("ui_left", 1);
 			}
 			else
 			{
-				_resetHorizontalInput();
+				_resetInputHorizontal();
 			}
 
-			if (movement.Y > 10)
+			if (movement.Y > _verticalDeathZone)
 			{
+				Input.ActionRelease("ui_up");
 				Input.ActionPress("ui_down", 1);
 			}
-			else if (movement.Y < -10)
+			else if (movement.Y < -_verticalDeathZone)
 			{
+				Input.ActionRelease("ui_down");
 				Input.ActionPress("ui_up", 1);
 			}
 			else
 			{
-				_resetVerticalInput();
+				_resetInputVertical();
 			}
-		}
-		else
-		{
-			_resetInput();
 		}
 	}
 }

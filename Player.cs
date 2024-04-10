@@ -1,10 +1,13 @@
 using Godot;
 using System;
+using static Phonager.Enumerators;
 
 public partial class Player : CharacterBody2D
 {
 	private const float Speed = 300.0f;
 	private AnimatedSprite2D _animatedSprite2D;
+
+	private MovementDirection _currentMovementDirection;
 
 
 	public override void _Ready()
@@ -29,32 +32,77 @@ public partial class Player : CharacterBody2D
 			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, Speed);
 		}
 
-		if (Input.IsActionJustPressed("ui_left"))
-		{
-			_animatedSprite2D.Play("left");
-		}
-		if (Input.IsActionJustPressed("ui_right"))
-		{
-			_animatedSprite2D.Play("right");
-		}
-		if (Input.IsActionJustPressed("ui_up"))
-		{
-			_animatedSprite2D.Play("up");
-		}
-		if (Input.IsActionJustPressed("ui_down"))
-		{
-			_animatedSprite2D.Play("down");
-		}
+		_handlePlayerAnimation();
 
-		if (!Input.IsActionPressed("ui_left") &&
+		Velocity = velocity;
+		MoveAndSlide();
+	}
+
+	private void _handlePlayerAnimation()
+	{
+		MovementDirection movementDirection = MovementDirection.idle;
+		bool updateAnimation = false;
+
+		if (Input.IsActionJustPressed("ui_left") ||
+		   (Input.IsActionPressed("ui_left") &&
+		   _animatedSprite2D.Animation != "left"))
+		{
+			movementDirection = MovementDirection.left;
+			updateAnimation=true;
+		}
+		else if (Input.IsActionJustPressed("ui_right") ||
+			(Input.IsActionPressed("ui_right") &&
+			_animatedSprite2D.Animation != "right"))
+		{
+			movementDirection = MovementDirection.right;
+			updateAnimation = true;
+		}
+		else if (Input.IsActionJustPressed("ui_up") ||
+			(Input.IsActionPressed("ui_up") &&
+			_animatedSprite2D.Animation != "up"))
+		{
+			movementDirection = MovementDirection.up;
+			updateAnimation = true;
+		}
+		else if (Input.IsActionJustPressed("ui_down") ||
+			(Input.IsActionPressed("ui_down") &&
+			_animatedSprite2D.Animation != "down"))
+		{
+			movementDirection = MovementDirection.down;
+			updateAnimation = true;
+		}
+		else if (!Input.IsActionPressed("ui_left") &&
 			!Input.IsActionPressed("ui_right") &&
 			!Input.IsActionPressed("ui_up") &&
 			!Input.IsActionPressed("ui_down"))
 		{
-			_animatedSprite2D.Pause();
+			movementDirection = MovementDirection.idle;
+			updateAnimation = true;
 		}
 
-		Velocity = velocity;
-		MoveAndSlide();
+
+
+		if (updateAnimation && 
+			_currentMovementDirection != movementDirection)
+		{
+			_currentMovementDirection = movementDirection;
+
+			switch (movementDirection)
+			{
+				case MovementDirection.idle:
+					{
+						_animatedSprite2D.Pause();
+						break;
+					}
+				case MovementDirection.up:
+				case MovementDirection.down:
+				case MovementDirection.left:
+				case MovementDirection.right:
+					{
+						_animatedSprite2D.Play(movementDirection.ToString());
+						break;
+					}
+			}
+		}
 	}
 }

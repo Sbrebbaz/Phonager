@@ -164,4 +164,4 @@ sprite_frames = SubResource("SpriteFrames_haj8b")
 animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)

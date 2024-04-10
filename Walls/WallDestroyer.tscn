@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbgcfrlsoawoc"]
+
+[ext_resource type="Script" path="res://Walls/WallDestroyer.cs" id="1_wqlb0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5ykh"]
+size = Vector2(544, 122)
+
+[node name="WallDestroyer" type="Area2D"]
+script = ExtResource("1_wqlb0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(272, 1040)
+shape = SubResource("RectangleShape2D_s5ykh")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

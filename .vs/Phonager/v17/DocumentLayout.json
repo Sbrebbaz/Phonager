@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "D:\\GoDot Projects\\Phonager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|d:\\godot projects\\phonager\\uicontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|solutionrelative:uicontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|d:\\godot projects\\phonager\\gameoverdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|solutionrelative:gameoverdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|d:\\godot projects\\phonager\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GoDot Projects\\Phonager\\Walls\\WallDestroyer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Walls\\WallDestroyer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GoDot Projects\\Phonager\\WallGenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WallGenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|d:\\godot projects\\phonager\\walls\\droppingwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|solutionrelative:walls\\droppingwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GoDot Projects\\Phonager\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|d:\\godot projects\\phonager\\classes\\enumerators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|solutionrelative:classes\\enumerators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|d:\\godot projects\\phonager\\uicontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DF24E22-7170-40E3-97B4-8BD40468698F}|Phonager.csproj|solutionrelative:uicontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,12 +47,90 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GameOverDetector.cs",
+              "DocumentMoniker": "D:\\GoDot Projects\\Phonager\\GameOverDetector.cs",
+              "RelativeDocumentMoniker": "GameOverDetector.cs",
+              "ToolTip": "D:\\GoDot Projects\\Phonager\\GameOverDetector.cs",
+              "RelativeToolTip": "GameOverDetector.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T20:25:42.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WallDestroyer.cs",
+              "DocumentMoniker": "D:\\GoDot Projects\\Phonager\\Walls\\WallDestroyer.cs",
+              "RelativeDocumentMoniker": "Walls\\WallDestroyer.cs",
+              "ToolTip": "D:\\GoDot Projects\\Phonager\\Walls\\WallDestroyer.cs",
+              "RelativeToolTip": "Walls\\WallDestroyer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T20:07:34.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "test.cs",
+              "DocumentMoniker": "D:\\GoDot Projects\\Phonager\\test.cs",
+              "RelativeDocumentMoniker": "test.cs",
+              "ToolTip": "D:\\GoDot Projects\\Phonager\\test.cs",
+              "RelativeToolTip": "test.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T19:16:04.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DroppingWall.cs",
+              "DocumentMoniker": "D:\\GoDot Projects\\Phonager\\Walls\\DroppingWall.cs",
+              "RelativeDocumentMoniker": "Walls\\DroppingWall.cs",
+              "ToolTip": "D:\\GoDot Projects\\Phonager\\Walls\\DroppingWall.cs",
+              "RelativeToolTip": "Walls\\DroppingWall.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T19:06:53.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WallGenerator.cs",
+              "DocumentMoniker": "D:\\GoDot Projects\\Phonager\\WallGenerator.cs",
+              "RelativeDocumentMoniker": "WallGenerator.cs",
+              "ToolTip": "D:\\GoDot Projects\\Phonager\\WallGenerator.cs",
+              "RelativeToolTip": "WallGenerator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T18:43:41.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Enumerators.cs",
+              "DocumentMoniker": "D:\\GoDot Projects\\Phonager\\Classes\\Enumerators.cs",
+              "RelativeDocumentMoniker": "Classes\\Enumerators.cs",
+              "ToolTip": "D:\\GoDot Projects\\Phonager\\Classes\\Enumerators.cs",
+              "RelativeToolTip": "Classes\\Enumerators.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T17:22:22.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "UIControls.cs",
               "DocumentMoniker": "D:\\GoDot Projects\\Phonager\\UIControls.cs",
               "RelativeDocumentMoniker": "UIControls.cs",
               "ToolTip": "D:\\GoDot Projects\\Phonager\\UIControls.cs",
               "RelativeToolTip": "UIControls.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGcAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-09T20:16:03.492Z",
               "EditorCaption": ""
@@ -41,7 +143,7 @@
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "D:\\GoDot Projects\\Phonager\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-09T18:14:11.507Z",
               "EditorCaption": ""
