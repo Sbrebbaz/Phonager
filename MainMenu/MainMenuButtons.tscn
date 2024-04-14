@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://d37n5xikjdr0c"]
+
+[ext_resource type="Script" path="res://MainMenu/MainMenuButtons.cs" id="1_3o0b6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u8qhc"]
+font_size = 56
+font_color = Color(0.976471, 0.0470588, 0.0470588, 1)
+
+[node name="MainMenuButtons" type="CanvasLayer"]
+script = ExtResource("1_3o0b6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 544.0
+offset_bottom = 960.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="TitleMarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="TitleContainer" type="BoxContainer" parent="MarginContainer/TitleMarginContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/TitleMarginContainer/TitleContainer"]
+layout_mode = 2
+text = "PHONAGER"
+label_settings = SubResource("LabelSettings_u8qhc")
+horizontal_alignment = 1
+
+[node name="SubTitleLabel" type="Label" parent="MarginContainer/TitleMarginContainer/TitleContainer"]
+layout_mode = 2
+text = "(Name is work in progress i swear)"
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="BoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+vertical = true
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "START GAME"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "OPTIONS"
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CREDITS"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "QUIT
+"
+
+[connection signal="pressed" from="MarginContainer/ButtonContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonContainer/QuitButton" to="." method="_on_quit_button_pressed"]

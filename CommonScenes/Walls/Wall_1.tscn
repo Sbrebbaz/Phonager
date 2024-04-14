@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1u6q708nskyi"]
 
-[ext_resource type="PackedScene" uid="uid://cv5xgsyggtdp0" path="res://BaseTiles.tscn" id="1_sqf32"]
-[ext_resource type="Script" path="res://Walls/DroppingWall.cs" id="1_ukrjk"]
+[ext_resource type="PackedScene" uid="uid://cv5xgsyggtdp0" path="res://CommonScenes/BaseTiles.tscn" id="1_sqf32"]
+[ext_resource type="Script" path="res://CommonScenes/Walls/DroppingWall.cs" id="1_ukrjk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kirf"]
 size = Vector2(549, 29)

@@ -8,13 +8,16 @@ public partial class WallGenerator : Node2D
 	private double _generationInterval = 1;
 	private double _currentGenerationInteval = 1;
 	private List<PackedScene> _walls = new List<PackedScene>();
+	private Node2D _currentLevel;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_walls.Add(ResourceLoader.Load<PackedScene>("res://Walls/Wall_1.tscn"));
-		_walls.Add(ResourceLoader.Load<PackedScene>("res://Walls/Wall_2.tscn"));
-		_walls.Add(ResourceLoader.Load<PackedScene>("res://Walls/Wall_3.tscn"));
+		_currentLevel = GetNode<Node2D>(".");
+
+		_walls.Add(ResourceLoader.Load<PackedScene>("res://CommonScenes/Walls/Wall_1.tscn"));
+		_walls.Add(ResourceLoader.Load<PackedScene>("res://CommonScenes/Walls/Wall_2.tscn"));
+		_walls.Add(ResourceLoader.Load<PackedScene>("res://CommonScenes/Walls/Wall_3.tscn"));
 	}
 
 	private PackedScene GetRandomWall()
@@ -35,6 +38,6 @@ public partial class WallGenerator : Node2D
 
 	private void _generateWall()
 	{
-		GetTree().Root.AddChild(GetRandomWall().Instantiate());
+		_currentLevel.AddChild(GetRandomWall().Instantiate());
 	}
 }

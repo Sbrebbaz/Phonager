@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://0iwe1t5dk2s4"]
 
-[ext_resource type="Script" path="res://UIControls.cs" id="1_ouvot"]
+[ext_resource type="Script" path="res://CommonScenes/UIControls.cs" id="1_ouvot"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrdx3"]
 bg_color = Color(0, 0, 0, 0.501961)

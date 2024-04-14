@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Phonager"
-run/main_scene="res://TestLevel.tscn"
+run/main_scene="res://MainMenu/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Classes/GameManager.cs"
+SceneManager="*res://Classes/SceneManager.cs"
 
 [display]
 

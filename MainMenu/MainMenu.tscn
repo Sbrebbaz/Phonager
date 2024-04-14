@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlueipxcx5lmg"]
+
+[ext_resource type="PackedScene" uid="uid://d37n5xikjdr0c" path="res://MainMenu/MainMenuButtons.tscn" id="1_anqep"]
+[ext_resource type="Script" path="res://MainMenu/MainMenu.cs" id="1_e5kwl"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_e5kwl")
+
+[node name="MainMenuButtons" parent="." instance=ExtResource("1_anqep")]
+
+[connection signal="CreditsButtonClicked" from="MainMenuButtons" to="." method="_on_main_menu_buttons_credits_button_clicked"]
+[connection signal="OptionsButtonClicked" from="MainMenuButtons" to="." method="_on_main_menu_buttons_options_button_clicked"]
+[connection signal="QuitButtonClicked" from="MainMenuButtons" to="." method="_on_main_menu_buttons_quit_button_clicked"]
+[connection signal="StartGameButtonClicked" from="MainMenuButtons" to="." method="_on_main_menu_buttons_start_game_button_clicked"]

@@ -10,5 +10,17 @@
 			left,
 			right
 		}
+
+		public enum GameScenes
+		{
+			Menu,
+			Options,
+			Quit,
+			CharacterSelect,
+			Credits,
+			InGame,
+			GameOver,
+			HighScores
+		}
 	}
 }

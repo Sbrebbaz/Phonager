@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://biihiuhct8vjc"]
 
-[ext_resource type="Script" path="res://GameOverDetector.cs" id="1_lcs6o"]
+[ext_resource type="Script" path="res://CommonScenes/GameOverDetector.cs" id="1_lcs6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojvmn"]
 size = Vector2(546, 22)
