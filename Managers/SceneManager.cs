@@ -3,6 +3,7 @@ using Phonager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using static Phonager.Enumerators;
 
 public partial class SceneManager : Node, ISceneManager
@@ -18,32 +19,35 @@ public partial class SceneManager : Node, ISceneManager
 			ResourceLoader.Load<PackedScene>("res://MainMenu/MainMenu.tscn")
 			);
 		_availableScenes.Add(
-			GameScenes.Options,
-			ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
-			);
-
-		//TODO IMPLEMENT SCENES BELOW
-
-		_availableScenes.Add(
-			GameScenes.CharacterSelect,
-			ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+		GameScenes.Options,
+			ResourceLoader.Load<PackedScene>("res://OptionsMenu/OptionsMenu.tscn")
 			);
 		_availableScenes.Add(
 			GameScenes.Credits,
-			ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+			ResourceLoader.Load<PackedScene>("res://CreditsMenu/CreditsMenu.tscn")
 			);
 		_availableScenes.Add(
 			GameScenes.InGame,
 			ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
 			);
-		_availableScenes.Add(
-			GameScenes.GameOver,
-			ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
-			);
-		_availableScenes.Add(
-			GameScenes.HighScores,
-			ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
-			);
+
+		//TODO IMPLEMENT SCENES BELOW
+		//_availableScenes.Add(
+		//	GameScenes.CharacterSelect,
+		//	ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+		//	);
+		//_availableScenes.Add(
+		//	GameScenes.GameOver,
+		//	ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+		//	);
+		//_availableScenes.Add(
+		//	GameScenes.HighScores,
+		//	ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+		//	);
+		//_availableScenes.Add(
+		//	GameScenes.Quit,
+		//	ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+		//	);
 
 	}
 

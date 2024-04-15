@@ -11,7 +11,6 @@ namespace Phonager
 
 		public override void _Ready()
 		{
-			base._Ready();
 			_gameManager = GetNode<GameManager>("/root/GameManager");
 		}
 
@@ -20,6 +19,7 @@ namespace Phonager
 		{
 			if (node is Player)
 			{
+				_gameManager.EndMatch();
 				_gameManager.LoadScene(GameScenes.Menu);
 			}
 		}

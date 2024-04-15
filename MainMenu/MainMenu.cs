@@ -14,6 +14,7 @@ public partial class MainMenu : Node2D
 	public void _on_main_menu_buttons_start_game_button_clicked()
 	{
 		_gameManager.LoadScene(Phonager.Enumerators.GameScenes.InGame);
+		_gameManager.StartMatch();
 	}
 
 	public void _on_main_menu_buttons_options_button_clicked()

@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://clb6vmfavkmqp"]
+
+[ext_resource type="Script" path="res://CommonScenes/GameUI.cs" id="1_lkhe8"]
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_lkhe8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_right = 1.007
+anchor_bottom = 1.0
+offset_right = 0.219971
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 30
+
+[node name="BoxContainer" type="BoxContainer" parent="MarginContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="TopHorizontalBoxContainer" type="BoxContainer" parent="MarginContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="PointContainer" type="BoxContainer" parent="MarginContainer/BoxContainer/TopHorizontalBoxContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="PointLabel" type="Label" parent="MarginContainer/BoxContainer/TopHorizontalBoxContainer/PointContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "---"
+horizontal_alignment = 1
+
+[node name="TimeContainer" type="BoxContainer" parent="MarginContainer/BoxContainer/TopHorizontalBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+vertical = true
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/BoxContainer/TopHorizontalBoxContainer/TimeContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "---"
+horizontal_alignment = 1
+
+[node name="DifficultyContainer" type="BoxContainer" parent="MarginContainer/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="DifficultyLabel" type="Label" parent="MarginContainer/BoxContainer/DifficultyContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Current wall speed multiplier: x1"
+horizontal_alignment = 1

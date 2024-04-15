@@ -17,8 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://Classes/GameManager.cs"
-SceneManager="*res://Classes/SceneManager.cs"
+GameManager="*res://Managers/GameManager.cs"
+MatchManager="*res://Managers/MatchManager.cs"
+SceneManager="*res://Managers/SceneManager.cs"
+SaveManager="*res://Managers/SaveManager.cs"
 
 [display]
 

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmjglh8kjepqh"]
+
+[ext_resource type="Script" path="res://CommonScenes/Walls/DroppingWall.cs" id="1_sy684"]
+[ext_resource type="PackedScene" uid="uid://cv5xgsyggtdp0" path="res://CommonScenes/BaseTiles.tscn" id="2_hj26w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kirf"]
+size = Vector2(549, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht0do"]
+size = Vector2(549, 29)
+
+[node name="Wall" type="CharacterBody2D"]
+position = Vector2(0, -50)
+script = ExtResource("1_sy684")
+
+[node name="BaseTiles" parent="." instance=ExtResource("2_hj26w")]
+position = Vector2(-2503.27, 2709.45)
+
+[node name="WallCollision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(271.5, 14.5)
+shape = SubResource("RectangleShape2D_8kirf")
+disabled = true
+
+[node name="PointDetectArea" type="Area2D" parent="."]
+visible = false
+
+[node name="PointDetectCollision" type="CollisionShape2D" parent="PointDetectArea"]
+position = Vector2(271.5, 14.5)
+shape = SubResource("RectangleShape2D_ht0do")
+debug_color = Color(0.972549, 0, 0.439216, 0.419608)
+
+[node name="WallDetectArea" type="Area2D" parent="."]
+visible = false
+
+[node name="WallDetectCollision" type="CollisionShape2D" parent="WallDetectArea"]
+position = Vector2(271.5, 14.5)
+shape = SubResource("RectangleShape2D_ht0do")
+debug_color = Color(0, 0.647059, 0.239216, 0.419608)
+
+[connection signal="body_entered" from="PointDetectArea" to="." method="_on_point_detect_area_body_entered"]
+[connection signal="body_exited" from="PointDetectArea" to="." method="_on_point_detect_area_body_exited"]

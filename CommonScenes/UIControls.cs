@@ -8,16 +8,18 @@ public partial class UIControls : CanvasLayer
 	private Vector2 _startingPoint;
 	private int _horizontalDeathZone;
 	private int _verticalDeathZone;
+	private GameManager _gameManager;
 
 	private Label _touchPos;
 
 	public override void _Ready()
 	{
-		base._Ready();
+		_gameManager = GetNode<GameManager>("/root/GameManager");
+
 		_horizontalDeathZone = (int)(GetViewport().GetVisibleRect().Size.X / 10 /2);
 		_verticalDeathZone = (int)(GetViewport().GetVisibleRect().Size.Y / 10 / 2);
 
-		_touchPos = GetNode<Label>("Label");
+		_touchPos = GetNode<Label>("TouchPositionLabel");
 		_touchPos.Visible = false;
 	}
 
@@ -121,5 +123,10 @@ public partial class UIControls : CanvasLayer
 				_resetInputVertical();
 			}
 		}
+	}
+
+	private void _on_test_button_pressed()
+	{
+		_gameManager.InvertDifficulty();
 	}
 }

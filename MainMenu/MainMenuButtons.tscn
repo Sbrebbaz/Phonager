@@ -1,38 +1,62 @@
-[gd_scene load_steps=3 format=3 uid="uid://d37n5xikjdr0c"]
+[gd_scene load_steps=5 format=3 uid="uid://d37n5xikjdr0c"]
 
 [ext_resource type="Script" path="res://MainMenu/MainMenuButtons.cs" id="1_3o0b6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u8qhc"]
 font_size = 56
 font_color = Color(0.976471, 0.0470588, 0.0470588, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_73l1a"]
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0waa1"]
+font_size = 32
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="MainMenuButtons" type="CanvasLayer"]
 script = ExtResource("1_3o0b6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 544.0
-offset_bottom = 960.0
+anchors_preset = -1
+anchor_right = 1.007
+anchor_bottom = 1.0
+offset_right = 0.219971
 theme_override_constants/margin_left = 40
-theme_override_constants/margin_right = 40
-
-[node name="TitleMarginContainer" type="MarginContainer" parent="MarginContainer"]
-layout_mode = 2
 theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 50
 
-[node name="TitleContainer" type="BoxContainer" parent="MarginContainer/TitleMarginContainer"]
+[node name="TitleContainer" type="BoxContainer" parent="MarginContainer"]
 layout_mode = 2
 vertical = true
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/TitleMarginContainer/TitleContainer"]
+[node name="TitleLabel" type="Label" parent="MarginContainer/TitleContainer"]
 layout_mode = 2
 text = "PHONAGER"
 label_settings = SubResource("LabelSettings_u8qhc")
 horizontal_alignment = 1
 
-[node name="SubTitleLabel" type="Label" parent="MarginContainer/TitleMarginContainer/TitleContainer"]
+[node name="SubTitleLabel" type="Label" parent="MarginContainer/TitleContainer"]
 layout_mode = 2
 text = "(Name is work in progress i swear)"
+label_settings = SubResource("LabelSettings_73l1a")
 horizontal_alignment = 1
+
+[node name="BottomContainer" type="BoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+vertical = true
+
+[node name="RecordLabel" type="Label" parent="MarginContainer/BottomContainer"]
+layout_mode = 2
+text = "RECORD: 0"
+label_settings = SubResource("LabelSettings_0waa1")
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="ButtonContainer" type="BoxContainer" parent="MarginContainer"]
 layout_mode = 2
