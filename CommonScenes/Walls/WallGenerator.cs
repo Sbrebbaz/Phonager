@@ -5,8 +5,6 @@ using System.Linq;
 
 public partial class WallGenerator : Node2D
 {
-	private double _generationInterval = 1;
-	private double _currentGenerationInteval = 1;
 	private List<PackedScene> _walls = new List<PackedScene>();
 	private Node2D _currentLevel;
 	private GameManager _gameManager;
@@ -34,17 +32,6 @@ public partial class WallGenerator : Node2D
 	private PackedScene GetRandomWall()
 	{
 		return _walls.OrderBy(x => Guid.NewGuid()).First();
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		_currentGenerationInteval += delta;
-		if (_currentGenerationInteval >= _generationInterval)
-		{
-			_currentGenerationInteval = 0;
-			_generateWall();
-		}
 	}
 
 	private void _generateWall()

@@ -3,6 +3,10 @@ using Phonager;
 
 public partial class MatchManager : Node, IMatchManager
 {
+	private int _levelCounter = 0;
+
+	private int _wallsToGenerateCount = 0;
+
 	private int _currentPoints = 0;
 
 	private double _difficultyTime = 10;
@@ -12,36 +16,21 @@ public partial class MatchManager : Node, IMatchManager
 	private double _maxDifficultyMultiplier = 3;
 	private bool _invertWalls = false;
 
-	private Timer _matchTimer;
-
 	public override void _Ready()
 	{
-		_matchTimer = new Timer();
 
-		GetNode<MatchManager>(".").AddChild(_matchTimer);
-
-		_matchTimer.WaitTime = _difficultyTime;
-		_matchTimer.Timeout += _matchTimer_Timeout;
-	}
-
-	private void _matchTimer_Timeout()
-	{
-		IncrementDifficultyMultiplier();
 	}
 
 	public void StartMatch()
 	{
 		ResetCurrentDifficultyMultiplier();
 		ResetPoints();
-		_matchTimer.Stop();
-		_matchTimer.Start();
 	}
 
 	public void EndMatch()
 	{
 		ResetCurrentDifficultyMultiplier();
 		ResetPoints();
-		_matchTimer.Stop();
 	}
 
 	#region Points
