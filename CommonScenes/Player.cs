@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Diagnostics;
 using static Phonager.Enumerators;
 
 public partial class Player : CharacterBody2D
@@ -41,49 +42,27 @@ public partial class Player : CharacterBody2D
 	private void _handlePlayerAnimation()
 	{
 		MovementDirection movementDirection = MovementDirection.idle;
-		bool updateAnimation = false;
 
-		if (Input.IsActionJustPressed("ui_left") ||
-		   (Input.IsActionPressed("ui_left") &&
-		   _animatedSprite2D.Animation != "left"))
-		{
-			movementDirection = MovementDirection.left;
-			updateAnimation=true;
-		}
-		else if (Input.IsActionJustPressed("ui_right") ||
-			(Input.IsActionPressed("ui_right") &&
-			_animatedSprite2D.Animation != "right"))
-		{
-			movementDirection = MovementDirection.right;
-			updateAnimation = true;
-		}
-		else if (Input.IsActionJustPressed("ui_up") ||
-			(Input.IsActionPressed("ui_up") &&
-			_animatedSprite2D.Animation != "up"))
+		if (Input.IsActionPressed("ui_up"))
 		{
 			movementDirection = MovementDirection.up;
-			updateAnimation = true;
 		}
-		else if (Input.IsActionJustPressed("ui_down") ||
-			(Input.IsActionPressed("ui_down") &&
-			_animatedSprite2D.Animation != "down"))
+		else if (Input.IsActionPressed("ui_down"))
 		{
 			movementDirection = MovementDirection.down;
-			updateAnimation = true;
 		}
-		else if (!Input.IsActionPressed("ui_left") &&
-			!Input.IsActionPressed("ui_right") &&
-			!Input.IsActionPressed("ui_up") &&
-			!Input.IsActionPressed("ui_down"))
+		else if (Input.IsActionPressed("ui_left"))
 		{
-			movementDirection = MovementDirection.idle;
-			updateAnimation = true;
+			movementDirection = MovementDirection.left;
+		}
+		else if (Input.IsActionPressed("ui_right"))
+		{
+			movementDirection = MovementDirection.right;
 		}
 
+		//Debug.WriteLine($"{_currentMovementDirection} - {movementDirection}");
 
-
-		if (updateAnimation && 
-			_currentMovementDirection != movementDirection)
+		if (_currentMovementDirection != movementDirection)
 		{
 			_currentMovementDirection = movementDirection;
 

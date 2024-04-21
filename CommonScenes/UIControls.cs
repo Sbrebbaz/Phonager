@@ -16,7 +16,7 @@ public partial class UIControls : CanvasLayer
 	{
 		_gameManager = GetNode<GameManager>("/root/GameManager");
 
-		_horizontalDeathZone = (int)(GetViewport().GetVisibleRect().Size.X / 10 /2);
+		_horizontalDeathZone = (int)(GetViewport().GetVisibleRect().Size.X / 10 / 2);
 		_verticalDeathZone = (int)(GetViewport().GetVisibleRect().Size.Y / 10 / 2);
 
 		_touchPos = GetNode<Label>("TouchPositionLabel");
@@ -89,9 +89,9 @@ public partial class UIControls : CanvasLayer
 			Vector2 currentPosition = GetViewport().GetMousePosition();
 			Vector2 movement = currentPosition - _startingPoint;
 
-			Debug.WriteLine($"SP {_startingPoint}");
-			Debug.WriteLine($"CP {currentPosition}");
-			Debug.WriteLine($"M {movement}");
+			//Debug.WriteLine($"SP {_startingPoint}");
+			//Debug.WriteLine($"CP {currentPosition}");
+			//Debug.WriteLine($"M {movement}");
 
 			if (movement.X > _horizontalDeathZone)
 			{
@@ -103,7 +103,8 @@ public partial class UIControls : CanvasLayer
 				Input.ActionRelease("ui_right");
 				Input.ActionPress("ui_left", 1);
 			}
-			else
+			else if (Input.IsActionPressed("ui_left") ||
+					Input.IsActionPressed("ui_right"))
 			{
 				_resetInputHorizontal();
 			}
@@ -118,7 +119,8 @@ public partial class UIControls : CanvasLayer
 				Input.ActionRelease("ui_down");
 				Input.ActionPress("ui_up", 1);
 			}
-			else
+			else if (Input.IsActionPressed("ui_up") ||
+					Input.IsActionPressed("ui_down"))
 			{
 				_resetInputVertical();
 			}
