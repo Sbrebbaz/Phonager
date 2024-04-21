@@ -7,13 +7,10 @@ public partial class WallGenerator : Node2D
 {
 	private List<PackedScene> _walls = new List<PackedScene>();
 	private Node2D _currentLevel;
-	private GameManager _gameManager;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_gameManager = GetNode<GameManager>("/root/GameManager");
-
 		_currentLevel = GetNode<Node2D>(".");
 
 		_walls.Add(ResourceLoader.Load<PackedScene>("res://CommonScenes/Walls/WallsToGenerate/Wall_1.tscn"));
@@ -36,17 +33,7 @@ public partial class WallGenerator : Node2D
 
 	private void _generateWall()
 	{
-		Node wallScene = GetRandomWall().Instantiate();
-		DroppingWall droppingWall = (DroppingWall)wallScene;
-
-		droppingWall.GivePoint += WallGenerator_GivePoint;
-		droppingWall.SpeedMultiplier = (float)_gameManager.GetCurrentDifficultyMultiplier();
-
-		_currentLevel.AddChild(wallScene);
+		_currentLevel.AddChild(GetRandomWall().Instantiate());
 	}
 
-	private void WallGenerator_GivePoint()
-	{
-		_gameManager.IncrementPoints();
-	}
 }

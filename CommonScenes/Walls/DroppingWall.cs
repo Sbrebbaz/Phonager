@@ -1,34 +1,22 @@
 using Godot;
+using static Constants;
 
 public partial class DroppingWall : CharacterBody2D
 {
-	[Signal]
-	public delegate void GivePointEventHandler();
-
-	private float _speed = 100;
-
-	private float _speedMultiplier = 1;
-
-	public float SpeedMultiplier
-	{
-		get { return _speedMultiplier; }
-		set { _speedMultiplier = value; }
-	}
-
+	private GameManager _gameManager;
 	private bool _pointAwarded = false;
 	private bool _playerDetected = false;
 
 	public override void _Ready()
 	{
-		_pointAwarded = false;
-		_speed = 100;
+		_gameManager = GetNode<GameManager>("/root/GameManager");
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
 
-		velocity.Y = _speed * _speedMultiplier;
+		velocity.Y = _gameManager.GetCurrentWallSpeed();
 
 		Velocity = velocity;
 		MoveAndSlide();
@@ -50,8 +38,7 @@ public partial class DroppingWall : CharacterBody2D
 			body is Player)
 		{
 			_pointAwarded = true;
-			EmitSignal(SignalName.GivePoint);
+			_gameManager.IncrementPoints();
 		}
 	}
-
 }
