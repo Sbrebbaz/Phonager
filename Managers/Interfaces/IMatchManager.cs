@@ -1,25 +1,15 @@
-﻿using static Phonager.Enumerators;
+﻿using static Enumerators;
 
-namespace Phonager
+public interface IMatchManager
 {
-	public interface IMatchManager
-	{
-		//Match management
-		public void StartMatch();
-		public void EndMatch();
+	//Match management
+	public void StartMatch();
+	public void PlayLevel(LevelModel levelToPlay);
+	public void EndMatch();
 
-		public void InvertDifficulty();
-
-		//Points
-		public void SetCurrentPoints(int points);
-		public void IncrementPoints();
-		public int GetCurrentPoints();
-		public void ResetPoints();
-
-		//Difficulty / Wall speed
-		public void SetCurrentDifficultyMultiplier(double difficultyMultiplier);
-		public void IncrementDifficultyMultiplier();
-		public void ResetCurrentDifficultyMultiplier();
-		public double GetCurrentDifficultyMultiplier();
-	}
+	//Points
+	public void SetCurrentPoints(int points);
+	public void IncrementPoints();
+	public int GetCurrentPoints();
+	public void ResetPoints();
 }

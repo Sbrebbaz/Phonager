@@ -1,10 +1,9 @@
 using Godot;
-using Phonager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
-using static Phonager.Enumerators;
+using static Enumerators;
 
 public partial class SceneManager : Node, ISceneManager
 {

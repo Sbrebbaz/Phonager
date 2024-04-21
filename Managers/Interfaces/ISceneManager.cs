@@ -1,9 +1,6 @@
-﻿using static Phonager.Enumerators;
+﻿using static Enumerators;
 
-namespace Phonager
+public interface ISceneManager
 {
-	public interface ISceneManager
-	{
-		public void LoadScene(GameScenes gameSceneToLoad);
-	}
+	public void LoadScene(GameScenes gameSceneToLoad);
 }

@@ -1,23 +1,28 @@
 using Godot;
-using Phonager;
 using System;
-using static Phonager.Enumerators;
+using static Enumerators;
 
 public partial class GameManager 
 	: Node, 
 	ISceneManager,
 	IMatchManager,
+	IPlayerManager,
+	IWallManager,
 	ISaveManager
 {
 	private ISceneManager _sceneManager;
 	private IMatchManager _matchManager;
 	private ISaveManager _saveManager;
+	private IPlayerManager _playerManager;
+	private IWallManager _wallManager;
 
 	public override void _Ready()
 	{
 		_sceneManager = GetNode<ISceneManager>("/root/SceneManager");
 		_matchManager = GetNode<IMatchManager>("/root/MatchManager");
 		_saveManager = GetNode<ISaveManager>("/root/SaveManager");
+		_playerManager = GetNode<IPlayerManager>("/root/PlayerManager");
+		_wallManager = GetNode<IWallManager>("/root/WallManager");
 	}
 
 	#region SceneManager
@@ -34,6 +39,11 @@ public partial class GameManager
 	public void StartMatch()
 	{
 		_matchManager.StartMatch();
+	}
+
+	public void PlayLevel(LevelModel levelToPlay)
+	{
+		_matchManager.PlayLevel(levelToPlay);
 	}
 
 	public void EndMatch()
@@ -71,35 +81,6 @@ public partial class GameManager
 
 	#endregion
 
-	#region Difficulty
-
-	public void SetCurrentDifficultyMultiplier(double difficultyMultiplier)
-	{
-		_matchManager.SetCurrentDifficultyMultiplier(difficultyMultiplier);
-	}
-
-	public void IncrementDifficultyMultiplier()
-	{
-		_matchManager.IncrementDifficultyMultiplier();
-	}
-
-	public void ResetCurrentDifficultyMultiplier()
-	{
-		_matchManager.ResetCurrentDifficultyMultiplier();
-	}
-
-	public double GetCurrentDifficultyMultiplier()
-	{
-		return _matchManager.GetCurrentDifficultyMultiplier();
-	}
-
-	public void InvertDifficulty()
-	{
-		_matchManager.InvertDifficulty();
-	}
-
-	#endregion
-
 	#endregion
 
 	#region SaveManager
@@ -120,4 +101,53 @@ public partial class GameManager
 	}
 
 	#endregion
+
+	#region PlayerManager
+
+	public void SetCurrentPlayerSpeed(float speed)
+	{
+		_playerManager.SetCurrentPlayerSpeed(speed);
+	}
+
+	public float GetCurrentPlayerSpeed()
+	{
+		return _playerManager.GetCurrentPlayerSpeed();
+	}
+
+	public void ResetPlayerSpeed()
+	{
+		_playerManager.ResetPlayerSpeed();
+	}
+
+	public void InvertPlayerSpeed()
+	{
+		_playerManager.InvertPlayerSpeed();
+	}
+
+	#endregion
+
+	#region WallManager
+
+	public void SetCurrentWallSpeed(float speed)
+	{
+		_wallManager.SetCurrentWallSpeed(speed);
+	}
+
+	public float GetCurrentWallSpeed()
+	{
+		return _wallManager.GetCurrentWallSpeed();
+	}
+
+	public void ResetWallSpeed()
+	{
+		_wallManager.ResetWallSpeed();
+	}
+
+	public void InvertWallSpeed()
+	{
+		_wallManager.InvertWallSpeed();
+	}
+
+	#endregion
+
 }

@@ -1,14 +1,10 @@
 using Godot;
-using Phonager;
 
 public partial class MatchManager : Node, IMatchManager
 {
 	private int _levelCounter = 0;
-
 	private int _wallsToGenerateCount = 0;
-
 	private int _currentPoints = 0;
-
 	private double _difficultyTime = 10;
 	private double _difficultyMultiplierStep = 0.1d;
 	private double _baseDifficultyMultiplier = 1;
@@ -16,20 +12,28 @@ public partial class MatchManager : Node, IMatchManager
 	private double _maxDifficultyMultiplier = 3;
 	private bool _invertWalls = false;
 
+	private IPlayerManager _playerManager;
+	private IWallManager _wallManager;
+
 	public override void _Ready()
 	{
-
+		_playerManager = GetNode<IPlayerManager>("/root/PlayerManager");
+		_wallManager = GetNode<IWallManager>("/root/WallManager");
 	}
 
 	public void StartMatch()
 	{
-		ResetCurrentDifficultyMultiplier();
 		ResetPoints();
+	}
+
+	public void PlayLevel(LevelModel levelToPlay)
+	{
+		_playerManager.SetCurrentPlayerSpeed(levelToPlay.PlayerSpeed);
+		_wallManager.SetCurrentWallSpeed(levelToPlay.WallSpeed);
 	}
 
 	public void EndMatch()
 	{
-		ResetCurrentDifficultyMultiplier();
 		ResetPoints();
 	}
 
@@ -56,38 +60,4 @@ public partial class MatchManager : Node, IMatchManager
 	}
 
 	#endregion
-
-	#region DifficultyMultiplier
-
-	public void SetCurrentDifficultyMultiplier(double difficultyMultiplier)
-	{
-		_currentDifficultyMultiplier = difficultyMultiplier;
-	}
-
-	public void IncrementDifficultyMultiplier()
-	{
-		_currentDifficultyMultiplier += _difficultyMultiplierStep;
-		if (_currentDifficultyMultiplier > _maxDifficultyMultiplier)
-		{
-			_currentDifficultyMultiplier = _maxDifficultyMultiplier;
-		}
-	}
-
-	public void ResetCurrentDifficultyMultiplier()
-	{
-		_currentDifficultyMultiplier = _baseDifficultyMultiplier;
-	}
-
-	public double GetCurrentDifficultyMultiplier()
-	{
-		return _invertWalls ? -_currentDifficultyMultiplier : _currentDifficultyMultiplier;
-	}
-
-	public void InvertDifficulty()
-	{
-		_invertWalls = !_invertWalls;
-	}
-
-	#endregion
-
 }
