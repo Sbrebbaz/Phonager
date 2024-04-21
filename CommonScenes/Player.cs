@@ -1,19 +1,18 @@
 using Godot;
 using System;
 using System.Diagnostics;
-using static Phonager.Enumerators;
+using static Enumerators;
 
 public partial class Player : CharacterBody2D
 {
-	private const float Speed = 300.0f;
+	private GameManager _gameManager;
 	private AnimatedSprite2D _animatedSprite2D;
-
 	private MovementDirection _currentMovementDirection;
-
 
 	public override void _Ready()
 	{
 		base._Ready();
+		_gameManager = GetNode<GameManager>("/root/GameManager");
 		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
 
@@ -24,13 +23,13 @@ public partial class Player : CharacterBody2D
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
-			velocity.X = direction.X * Speed;
-			velocity.Y = direction.Y * Speed;
+			velocity.X = direction.X * _gameManager.GetCurrentPlayerSpeed();
+			velocity.Y = direction.Y * _gameManager.GetCurrentPlayerSpeed();
 		}
 		else
 		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, Speed);
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, _gameManager.GetCurrentPlayerSpeed());
+			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, _gameManager.GetCurrentPlayerSpeed());
 		}
 
 		_handlePlayerAnimation();
