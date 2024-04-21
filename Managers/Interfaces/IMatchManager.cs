@@ -21,12 +21,5 @@ namespace Phonager
 		public void IncrementDifficultyMultiplier();
 		public void ResetCurrentDifficultyMultiplier();
 		public double GetCurrentDifficultyMultiplier();
-
-		//Level counter management
-		public void SetLevelCounter(int levelCounter);
-		public void IncreaseLevelCounter();
-		public void ResetLevelCounter();
-		public int GetLevelCounter();
-
 	}
 }
