@@ -5,8 +5,11 @@ public partial class GameUI : CanvasLayer
 {
 	private GameManager _gameManager;
 
-	private Label _difficultyLabel;
+	private Label _wallSpeedLabel;
+	private Label _playerSpeedLabel;
+
 	private Label _timeLabel;
+
 	private Label _pointLabel;
 	private double _time;
 
@@ -17,7 +20,10 @@ public partial class GameUI : CanvasLayer
 
 		_pointLabel = GetNode<Label>("MarginContainer/BoxContainer/TopHorizontalBoxContainer/PointContainer/PointLabel");
 		_timeLabel = GetNode<Label>("MarginContainer/BoxContainer/TopHorizontalBoxContainer/TimeContainer/TimeLabel");
-		_difficultyLabel = GetNode<Label>("MarginContainer/BoxContainer/DifficultyContainer/DifficultyLabel");
+
+		_wallSpeedLabel = GetNode<Label>("MarginContainer/BoxContainer/DifficultyContainer/WallSpeedLabel");
+		_playerSpeedLabel = GetNode<Label>("MarginContainer/BoxContainer/DifficultyContainer/PlayerSpeedLabel");
+
 		_time = 0d;
 	}
 
@@ -29,6 +35,6 @@ public partial class GameUI : CanvasLayer
 
 		_pointLabel.Text = _gameManager.GetCurrentPoints().ToString();
 
-		_difficultyLabel.Text = $"Current wall speed multiplier: x{_gameManager.GetCurrentDifficultyMultiplier().ToString("#.##")}";	
+		_wallSpeedLabel.Text = $"Current wall speed multiplier: x{_gameManager.GetCurrentDifficultyMultiplier().ToString("#.##")}";
 	}
 }
