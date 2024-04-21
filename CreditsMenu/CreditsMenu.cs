@@ -1,21 +1,19 @@
 using Godot;
 using System;
+using static Enumerators;
 
-namespace Phonager
+public partial class CreditsMenu : CanvasLayer
 {
-	public partial class CreditsMenu : CanvasLayer
+	private GameManager _gameManager;
+
+	public override void _Ready()
 	{
-		private GameManager _gameManager;
+		_gameManager = GetNode<GameManager>("/root/GameManager");
+	}
 
-		public override void _Ready()
-		{
-			_gameManager = GetNode<GameManager>("/root/GameManager");
-		}
+	public void _on_button_pressed()
+	{
+		_gameManager.LoadScene(GameScenes.Menu);
 
-		public void _on_button_pressed()
-		{
-			_gameManager.LoadScene(Enumerators.GameScenes.Menu);
-
-		}
 	}
 }

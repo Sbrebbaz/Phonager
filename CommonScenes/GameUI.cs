@@ -35,6 +35,7 @@ public partial class GameUI : CanvasLayer
 
 		_pointLabel.Text = _gameManager.GetCurrentPoints().ToString();
 
-		_wallSpeedLabel.Text = $"Current wall speed multiplier: x{_gameManager.GetCurrentDifficultyMultiplier().ToString("#.##")}";
+		_wallSpeedLabel.Text = $"Current wall speed multiplier: {_gameManager.GetCurrentWallSpeed().ToString("#.##")}";
+		_playerSpeedLabel.Text = $"Current player speed: {_gameManager.GetCurrentPlayerSpeed().ToString("#.##")}";
 	}
 }

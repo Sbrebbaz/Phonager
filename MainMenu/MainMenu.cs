@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using static Enumerators;
 
 public partial class MainMenu : Node2D
 {
@@ -13,22 +14,22 @@ public partial class MainMenu : Node2D
 
 	public void _on_main_menu_buttons_start_game_button_clicked()
 	{
-		_gameManager.LoadScene(Phonager.Enumerators.GameScenes.InGame);
+		_gameManager.LoadScene(GameScenes.InGame);
 		_gameManager.StartMatch();
 	}
 
 	public void _on_main_menu_buttons_options_button_clicked()
 	{
-		_gameManager.LoadScene(Phonager.Enumerators.GameScenes.Options);
+		_gameManager.LoadScene(GameScenes.Options);
 	}
 
 	public void _on_main_menu_buttons_credits_button_clicked()
 	{
-		_gameManager.LoadScene(Phonager.Enumerators.GameScenes.Credits);
+		_gameManager.LoadScene(GameScenes.Credits);
 	}
 
 	public void _on_main_menu_buttons_quit_button_clicked()
 	{
-		_gameManager.LoadScene(Phonager.Enumerators.GameScenes.Quit);
+		_gameManager.LoadScene(GameScenes.Quit);
 	}
 }

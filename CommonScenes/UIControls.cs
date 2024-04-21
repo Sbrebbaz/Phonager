@@ -126,9 +126,4 @@ public partial class UIControls : CanvasLayer
 			}
 		}
 	}
-
-	private void _on_test_button_pressed()
-	{
-		_gameManager.InvertDifficulty();
-	}
 }

@@ -51,16 +51,16 @@ size_flags_vertical = 10
 alignment = 1
 vertical = true
 
+[node name="PlayerSpeedLabel" type="Label" parent="MarginContainer/BoxContainer/DifficultyContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Current player speed: -"
+horizontal_alignment = 1
+
 [node name="WallSpeedLabel" type="Label" parent="MarginContainer/BoxContainer/DifficultyContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Current wall speed multiplier: x1"
-horizontal_alignment = 1
-
-[node name="PlayerSpeedLabel" type="Label" parent="MarginContainer/BoxContainer/DifficultyContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Current player speed: x1"
 horizontal_alignment = 1

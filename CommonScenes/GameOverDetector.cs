@@ -1,28 +1,24 @@
 using Godot;
 using System;
 using System.Xml;
-using static Phonager.Enumerators;
+using static Enumerators;
 
-namespace Phonager
+public partial class GameOverDetector : Area2D
 {
-	public partial class GameOverDetector : Area2D
+	private GameManager _gameManager;
+
+	public override void _Ready()
 	{
-		private GameManager _gameManager;
+		_gameManager = GetNode<GameManager>("/root/GameManager");
+	}
 
-		public override void _Ready()
+	// Called when the node enters the scene tree for the first time.
+	public void _on_body_entered(Node2D node)
+	{
+		if (node is Player)
 		{
-			_gameManager = GetNode<GameManager>("/root/GameManager");
-		}
-
-		// Called when the node enters the scene tree for the first time.
-		public void _on_body_entered(Node2D node)
-		{
-			if (node is Player)
-			{
-				_gameManager.EndMatch();
-				_gameManager.LoadScene(GameScenes.Menu);
-			}
+			_gameManager.EndMatch();
+			_gameManager.LoadScene(GameScenes.Menu);
 		}
 	}
 }
-

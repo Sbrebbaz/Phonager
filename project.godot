@@ -21,6 +21,8 @@ GameManager="*res://Managers/GameManager.cs"
 MatchManager="*res://Managers/MatchManager.cs"
 SceneManager="*res://Managers/SceneManager.cs"
 SaveManager="*res://Managers/SaveManager.cs"
+PlayerManager="*res://Managers/PlayerManager.cs"
+WallManager="*res://Managers/WallManager.cs"
 
 [display]
 
