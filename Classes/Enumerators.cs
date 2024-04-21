@@ -1,26 +1,23 @@
-﻿namespace Phonager
+﻿public static class Enumerators
 {
-	public static class Enumerators
+	public enum MovementDirection
 	{
-		public enum MovementDirection
-		{
-			idle,
-			up,
-			down,
-			left,
-			right
-		}
+		idle,
+		up,
+		down,
+		left,
+		right
+	}
 
-		public enum GameScenes
-		{
-			Menu,
-			Options,
-			Quit,
-			CharacterSelect,
-			Credits,
-			InGame,
-			GameOver,
-			HighScores
-		}
+	public enum GameScenes
+	{
+		Menu,
+		Options,
+		Quit,
+		CharacterSelect,
+		Credits,
+		InGame,
+		GameOver,
+		HighScores
 	}
 }

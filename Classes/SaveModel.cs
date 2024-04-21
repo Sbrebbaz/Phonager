@@ -1,22 +1,19 @@
 ﻿using Godot;
 
-namespace Phonager
+public class SaveModel
 {
-	public class SaveModel
+	private int _record = 0;
+
+	public int Record
 	{
-		private int _record = 0;
+		get { return _record; }
+		set { _record = value; }
+	}
 
-		public int Record
-		{
-			get { return _record; }
-			set { _record = value; }
-		}
+	public SaveModel() { }
 
-		public SaveModel() { }
-
-		public SaveModel(int record)
-		{
-			_record = record;
-		}
+	public SaveModel(int record)
+	{
+		_record = record;
 	}
 }

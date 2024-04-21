@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelModel" load_steps=2 format=3 uid="uid://jv05uq1vu3kn"]
+
+[ext_resource type="Script" path="res://Classes/LevelModel.cs" id="1_f38l5"]
+
+[resource]
+script = ExtResource("1_f38l5")
+WallCount = 10
+WallSpeed = 1.0
+InvertWallDirection = false
+TimeBetweenWalls = 1000
+WallAlpha = 255
+PlayerSpeed = 300.0
+InvertPlayerControls = false
