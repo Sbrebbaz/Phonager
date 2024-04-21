@@ -27,25 +27,25 @@ public partial class SceneManager : Node, ISceneManager
 			);
 		_availableScenes.Add(
 			GameScenes.InGame,
-			ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+			ResourceLoader.Load<PackedScene>("res://MainGame/MainGame.tscn")
 			);
 
 		//TODO IMPLEMENT SCENES BELOW
 		//_availableScenes.Add(
 		//	GameScenes.CharacterSelect,
-		//	ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+		//	ResourceLoader.Load<PackedScene>("res://MainGame/MainGame.tscn")
 		//	);
 		//_availableScenes.Add(
 		//	GameScenes.GameOver,
-		//	ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+		//	ResourceLoader.Load<PackedScene>("res://MainGame/MainGame.tscn")
 		//	);
 		//_availableScenes.Add(
 		//	GameScenes.HighScores,
-		//	ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+		//	ResourceLoader.Load<PackedScene>("res://MainGame/MainGame.tscn")
 		//	);
 		//_availableScenes.Add(
 		//	GameScenes.Quit,
-		//	ResourceLoader.Load<PackedScene>("res://MainGame/TestLevel.tscn")
+		//	ResourceLoader.Load<PackedScene>("res://MainGame/MainGame.tscn")
 		//	);
 
 	}

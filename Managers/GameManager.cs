@@ -148,6 +148,16 @@ public partial class GameManager
 		_wallManager.InvertWallSpeed();
 	}
 
+	public void GenerateRandomWall()
+	{
+		_wallManager.GenerateRandomWall();
+	}
+
+	public void RefreshCurrentLevel()
+	{
+		_wallManager.RefreshCurrentLevel();
+	}
+
 	#endregion
 
 }
